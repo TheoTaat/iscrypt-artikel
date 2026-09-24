@@ -1,0 +1,16 @@
+{
+  "name": "iscrypt-artikel",
+  "version": "1.0.0",
+  "description": "Fachartikel über ISCRIPT – als ISCRIPT-Projekt",
+  "private": true,
+  "scripts": {
+    "extract": "node node_modules/iscrypt/resolver/kontext-extrahieren.js --inhalt kontexte/iscrypt.inhalt.txt --form kontexte/fachartikel.form.txt --out out/",
+    "extract:homepage": "node node_modules/iscrypt/resolver/kontext-extrahieren.js --inhalt kontexte/iscrypt.inhalt.txt --form kontexte/homepage.form.txt --out out/",
+    "resolve": "node node_modules/iscrypt/resolver/resolve.js --code code/iscrypt.isc --parameter out/parameter.json --domaene fachpublikation --out out/",
+    "resolve:homepage": "node node_modules/iscrypt/resolver/resolve.js --code code/iscrypt.isc --parameter out/parameter.json --domaene website --out out/",
+    "generate": "npm run extract && npm run resolve"
+  },
+  "dependencies": {
+    "iscrypt": "github:TheoTaat/iscrypt"
+  }
+}
