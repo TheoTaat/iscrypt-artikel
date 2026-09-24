@@ -21,8 +21,26 @@ Repository hängt davon ab:
 ```
 
 Beim `npm install` wird iscrypt als Dependency installiert.
-Änderungen an iscrypt (Resolver-Verbesserungen, neue Domänen)
-wirken sich beim nächsten `npm update` hier aus.
+Die Version ist im `package.json` gepinnt:
+
+```json
+"dependencies": { "iscrypt": "github:TheoTaat/iscrypt#v0.1.0" }
+```
+
+## Versionierung / Dependency
+
+`iscrypt-artikel` ist an eine konkrete Version von iscrypt
+g
+ew=ebunden (#v0.1.0 im package.json + Commit in package-lock.json).
+`npm install` holt immer exakt diesen Stand — reproduzierbarer
+Build, kein stiller Bruch, wenn sich an iscrypt etwas ändert.
+
+**Auf eine neue iscrypt-Version updaten:**
+
+1. In `iscrypt`: Änderungen committen + neuer Tag (`v0.2.0`) + push
+2. Hier:_dependency anpassen: `"iscrypt": "github:TheoTaat/iscrypt#v0.2.0"`
+3. `npm install` → neuer `package-lock.json` → commit
+4. Pipeline verifizieren: `npm run extract && npm run resolve`
 
 ## Struktur
 
