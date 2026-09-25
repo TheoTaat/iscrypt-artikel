@@ -11,6 +11,6 @@
     "generate": "npm run extract && npm run resolve"
   },
   "dependencies": {
-    "iscrypt": "github:TheoTaat/iscrypt#v0.1.0"
+    "iscrypt": "github:TheoTaat/iscrypt#v0.1.1"
   }
 }
