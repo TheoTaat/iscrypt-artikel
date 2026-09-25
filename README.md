@@ -50,11 +50,12 @@ iscrypt-artikel/
 ├── package.json                 # Abhängigkeit: iscrypt
 ├── code/
 │   └── iscrypt.isc              # Artikel-Code (domänenneutral)
-├── kontexte/
-│   ├── iscrypt.inhalt.txt       # Kontext A: Inhalt (artefakt-unabhängig)
-│   ├── fachartikel.form.txt     # Kontext B: Form des Fachartikels
-│   ├── homepage.form.txt        # Kontext B: Form der Homepage
-│   └── fachartikel.vorlage.txt  # Vorlage für neue Kontexte B
+├── kontexte/                    # alle Kontexte sind Markdown
+│   ├── iscrypt.inhalt.md        # Kontext A: Inhalt (artefakt-unabhängig)
+│   ├── fachartikel.form.md      # Kontext B: Form des Fachartikels
+│   ├── homepage.form.md         # Kontext B: Form der Homepage
+│   ├── fachartikel.entwurf.md   # Entwurf zum Fachartikel-Kontext
+│   └── fachartikel.vorlage.md   # Vorlage für neue Kontexte B
 └── out/
     ├── artikel.generiert.md     # Fachartikel-Rohling (Markdown)
     ├── artikel.ueberarbeitet.md # menschliche Überarbeitung (bleibt)
@@ -65,13 +66,13 @@ iscrypt-artikel/
 
 ## Kontext A und Kontext B
 
-Der Kontext ist zweigeteilt:
+Der Kontext ist zweigeteilt. **Alle Kontexte sind Markdown**:
 
-- **Kontext A** (`kontexte/iscrypt.inhalt.txt`) — Alles über
+- **Kontext A** (`kontexte/iscrypt.inhalt.md`) — Alles über
   ISCRIPT an sich. Was es ist, was es leistet, welche Fakten
   gelten. Bleibt bei jedem Artefakt-Wechsel gleich.
 
-- **Kontext B** (`fachartikel.form.txt` / `homepage.form.txt`)
+- **Kontext B** (`fachartikel.form.md` / `homepage.form.md`)
   — Wie das Artefakt strukturiert, aufgebaut, getönt sein soll.
   Wird ausgetauscht, wenn das Artefakt-Wechsel.
 
@@ -79,7 +80,7 @@ Der Kontext ist zweigeteilt:
 
 Um von Fachartikel zu Homepage zu wechseln:
 
-1. Kontext B tauschen: `fachartikel.form.txt` → `homepage.form.txt`
+1. Kontext B tauschen: `fachartikel.form.md` → `homepage.form.md`
 2. Domänengrammatik: `--domaene fachpublikation` → `website`
 
 Alles andere bleibt stabil: Kontext A, Code, Resolver.

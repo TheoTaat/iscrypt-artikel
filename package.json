@@ -4,8 +4,8 @@
   "description": "Fachartikel über ISCRIPT – als ISCRIPT-Projekt",
   "private": true,
   "scripts": {
-    "extract": "node node_modules/iscrypt/resolver/kontext-extrahieren.js --inhalt kontexte/iscrypt.inhalt.txt --form kontexte/fachartikel.form.txt --out out/",
-    "extract:homepage": "node node_modules/iscrypt/resolver/kontext-extrahieren.js --inhalt kontexte/iscrypt.inhalt.txt --form kontexte/homepage.form.txt --out out/",
+    "extract": "node node_modules/iscrypt/resolver/kontext-extrahieren.js --inhalt kontexte/iscrypt.inhalt.md --form kontexte/fachartikel.form.md --out out/",
+    "extract:homepage": "node node_modules/iscrypt/resolver/kontext-extrahieren.js --inhalt kontexte/iscrypt.inhalt.md --form kontexte/homepage.form.md --out out/",
     "resolve": "node node_modules/iscrypt/resolver/resolve.js --code code/iscrypt.isc --parameter out/parameter.json --domaene fachpublikation --out out/",
     "resolve:homepage": "node node_modules/iscrypt/resolver/resolve.js --code code/iscrypt.isc --parameter out/parameter.json --domaene website --out out/",
     "generate": "npm run extract && npm run resolve"
